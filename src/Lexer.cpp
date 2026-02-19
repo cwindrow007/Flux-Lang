@@ -72,7 +72,7 @@ SNX Lexer::collect_identifier() {
     return { SyntaxTypes::Identifier, s };
 }
 
-// Helper to grab things like
+// Helper to grab things like 
 SNX Lexer::collect_number() {
     std::string s;
     while (isdigit(current_char())) {
