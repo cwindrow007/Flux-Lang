@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"B:/flux-lang/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,10 @@
+^B:\FLUX-LANG\BUILD\CMAKEFILES\07216CE2A68F3C15C84962F6A555B50F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SB:/flux-lang -BB:/flux-lang/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file B:/flux-lang/build/Flux.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
