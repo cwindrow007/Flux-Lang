@@ -3,6 +3,7 @@
 #include <sstream>
 #include <vector>
 #include "Lexer.h"
+#include "parser.h"
 /*
 * 
 * 02-18-2026
@@ -61,42 +62,75 @@
 */
 
 
-int main(int argc, char* argv[]) {
+void printAST(const std::vector<std::unique_ptr<ASTNode>>& nodes) {
+    std::cout << "\n--- Flux AST Analysis ---" << std::endl;
 
+    if (nodes.empty()) {
+        std::cout << "No valid statements found." << std::endl;
+        return;
+    }
+
+    for (const auto& node : nodes) {
+        // Checking for Variable Declarations
+        auto varDecl = dynamic_cast<VariableDeclareNode*>(node.get());
+        if (varDecl) {
+            std::cout << "[Variable Declaration]" << std::endl;
+            std::cout << "  Name:  " << varDecl->name << std::endl;
+            std::cout << "  Type:  " << varDecl->type;
+
+            if (varDecl->type == "AUTO") {
+                std::cout << " (Pending Inference)";
+            }
+            std::cout << std::endl;
+
+            // Checking the value assigned to it
+            auto init = dynamic_cast<LiteralNode*>(varDecl->initializer.get());
+            if (init) {
+                std::cout << "  Value: " << init->value << std::endl;
+            }
+            std::cout << "------------------------" << std::endl;
+        }
+    }
+}
+
+int main(int argc, char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Error: No input file provided." << std::endl;
         std::cerr << "Usage: flux <filename.flux>" << std::endl;
         return 1;
     }
 
-    std::string filePath = argv[1];
-    std::ifstream file(filePath);
-
-
+    // 1. Read File
+    std::ifstream file(argv[1]);
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filePath << std::endl;
+        std::cerr << "Error: Could not open file " << argv[1] << std::endl;
         return 1;
     }
 
-
     std::stringstream buffer;
     buffer << file.rdbuf();
-    std::string sourceCode = buffer.str();
+    std::string source = buffer.str();
 
-    std::cout << "--- Flux Compiler v0.1 ---" << std::endl;
-    std::cout << "Reading: " << filePath << "\n" << std::endl;
-
-
-    Lexer lexer(sourceCode);
+    // 2. Lexical Analysis (The Eyes)
+    Lexer lexer(source);
     std::vector<SNX> tokens = lexer.tokenize();
 
-    
-    for (const auto& token : tokens) {
+    // 3. Parsing (The Brain)
+    // IMPORTANT: Make sure your Parser.cpp constructor uses : tokens(tokens) 
+    Parser parser(tokens);
+    std::vector<std::unique_ptr<ASTNode>> program;
 
-        std::cout << "Token Found: [Value: " << token.value << "]" << std::endl;
+    // Loop through the entire token stream until we hit the end
+    while (true) {
+        auto node = parser.parse_statement();
+        if (!node) break;
+        program.push_back(std::move(node));
     }
 
-    std::cout << "\nLexical Analysis Complete." << std::endl;
+    // 4. Output Results
+    std::cout << "--- Flux Compiler v0.1 ---" << std::endl;
+    std::cout << "Processing: " << argv[1] << std::endl;
+
+    printAST(program);
 
     return 0;
 }

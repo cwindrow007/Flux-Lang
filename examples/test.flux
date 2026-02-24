@@ -1,1 +1,3 @@
-let x : int = 24;
+let x = 5
+let y : int = 7
+

@@ -9,6 +9,7 @@ public:
 	Parser(const std::vector<SNX>& tokens);
 
 	std::vector<std::unique_ptr<ASTNode>> parse_program();
+	std::unique_ptr<ASTNode> parse_statement();
 
 private:
 
@@ -20,6 +21,5 @@ private:
 	SNX consume(); //Grabs token and moves forward
 	bool match(SyntaxTypes type); //Matches current token to whats expected
 
-	std::unique_ptr<ASTNode> parse_statement();
 	std::unique_ptr<ASTNode> parse_declaration();
 };
