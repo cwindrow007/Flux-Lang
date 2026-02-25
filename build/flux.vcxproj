@@ -375,6 +375,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="B:\flux-lang\src\main.cpp" />
     <ClCompile Include="B:\flux-lang\src\Lexer.cpp" />
     <ClInclude Include="B:\flux-lang\include\AST.h" />
+    <ClInclude Include="B:\flux-lang\include\parser.h" />
+    <ClCompile Include="B:\flux-lang\src\parser.cpp" />
+    <ClInclude Include="B:\flux-lang\include\symbolTable.h" />
+    <ClInclude Include="B:\flux-lang\include\emitter.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

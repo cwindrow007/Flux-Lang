@@ -6,4 +6,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-add_executable(flux src/main.cpp src/Lexer.cpp "include/AST.h" "include/parser.h" "src/parser.cpp")
+add_executable(flux src/main.cpp src/Lexer.cpp "include/AST.h" "include/parser.h" "src/parser.cpp" "include/symbolTable.h" "include/emitter.h")

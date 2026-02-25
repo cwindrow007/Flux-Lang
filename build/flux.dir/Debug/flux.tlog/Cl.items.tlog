@@ -1,2 +1,3 @@
 B:\flux-lang\src\main.cpp;B:\flux-lang\build\flux.dir\Debug\main.obj
 B:\flux-lang\src\Lexer.cpp;B:\flux-lang\build\flux.dir\Debug\Lexer.obj
+B:\flux-lang\src\parser.cpp;B:\flux-lang\build\flux.dir\Debug\parser.obj

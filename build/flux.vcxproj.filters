@@ -7,9 +7,21 @@
     <ClCompile Include="B:\flux-lang\src\Lexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="B:\flux-lang\src\parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="B:\flux-lang\include\AST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="B:\flux-lang\include\parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="B:\flux-lang\include\symbolTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="B:\flux-lang\include\emitter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
