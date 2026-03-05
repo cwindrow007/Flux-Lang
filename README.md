@@ -7,9 +7,20 @@ Flux combines the follow:
 - TypeScript style data structures
 - prefictable compilation behavior
 
-Flux is compiled by the Coffee Compiler
->>NOTE: COFFEE COMPILER IS CURRENTLY INDEV WITH THE LANGUAGE
+Flux is compiled by the Coffee Compiler, written in C.
+>NOTE: COFFEE COMPILER IS CURRENTLY INDEV WITH THE LANGUAGE
+---
 
+## Language Principles
+
+Flux is designed with:
+- **Clarity** - Syntax should be easy to read and write.
+- **Predictability** - Code behavior should be explicit and deterministic.
+- **Performance** - compiled native binaries.
+- **Low-Level Capability** - allows systems programming.
+- **Minimalism** - small core language
+
+Flux intentionally avoids complex language features in its early versions to best optimize and improve its current areas. Once these areas are ***as best as they can get***, the move to further complexities will be designed and addressed.
 
 ``` 
  ___  _________  ________                                                 
