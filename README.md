@@ -1,3 +1,15 @@
+# Flux Programming Language
+Flux is a statically typed systesm programming languages designed for clarity, perforamnce, and low level control.
+
+Flux combines the follow:
+- Python-like readability
+- C++ level performance
+- TypeScript style data structures
+- prefictable compilation behavior
+
+Flux is compiled by the Coffee Compiler
+>>NOTE: COFFEE COMPILER IS CURRENTLY INDEV WITH THE LANGUAGE
+
 
 ``` 
  ___  _________  ________                                                 
