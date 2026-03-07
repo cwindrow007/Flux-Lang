@@ -1,5 +1,5 @@
 # Flux Programming Language
-Flux is a statically typed systems programming languages designed for clarity, performance, and low-level control.
+Flux is a statically typed systems programming language designed for clarity, performance, and low-level control.
 
 Flux combines the following:
 - Python-like readability
@@ -29,7 +29,7 @@ Flux provides a modern feature set while maintaing a minimal and predictable cor
 
 ### Static Typing
 
-Flux is statically typed with optimal local type inference.
+Flux is statically typed with optinal local type inference.
 
 ``` 
 let x = 5;
@@ -44,7 +44,7 @@ Flux v0.1 will support the following built-in types.
 | Type      | Description|
 |Int        | 64-bit signed integer|
 |float      | 64-bit floating point number|
-|bool       | bolean value |
+|bool       | Boolean value |
 |char       | single byte character |
 |-----------|-----------|
 
@@ -151,7 +151,7 @@ Features:
 Language becomes suitable for larger software.
 
 Features:
-- Modules Factory Systems
+- Module System
 - Improved FST
 - Package Management Concepts
 - Coffee Compiler Improvements
@@ -175,7 +175,7 @@ Possible Additions:
 - Generics
 - Interfaces or Traits
 - Better Error Handling
-- Compiler Management
+- Compiler Improvements
 ---
 
 ### Version 1.0 - Stable Language
