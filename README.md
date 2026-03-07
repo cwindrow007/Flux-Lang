@@ -8,7 +8,8 @@ Flux combines the follow:
 - prefictable compilation behavior
 
 Flux is compiled by the Coffee Compiler, written in C.
->NOTE: COFFEE COMPILER IS CURRENTLY INDEV WITH THE LANGUAGE
+>[!CAUTION]
+> COFFEE COMPILER IS CURRENTLY INDEV WITH THE LANGUAGE
 ---
 
 ## Language Principles
@@ -21,6 +22,35 @@ Flux is designed with:
 - **Minimalism** - small core language
 
 Flux intentionally avoids complex language features in its early versions to best optimize and improve its current areas. Once these areas are ***as best as they can get***, the move to further complexities will be designed and addressed.
+
+## Core Language Features
+
+Flux provides a modern feature set while mainting a minimal and predictable core language.
+
+### Static Typing
+
+Flux is statically typed with optinal local type inference.
+
+``` 
+let x = 5;
+let y : int = 10;
+``` 
+Type inference determines the variable tpe from teh intializer
+---
+
+## Primitive Types
+Flux v0.1 will support the following built-in types.
+|-----------|-----------|
+| Type      | Description|
+|Int        | 64-bit signed integer|
+|float      | 64-bit floating point number|
+|bool       | boolean value |
+|char       | single byte character |
+|-----------|-----------|
+
+>[!NOTE]
+> Future versions may introduce additional numerics and composite types.
+
 
 ``` 
  ___  _________  ________                                                 
